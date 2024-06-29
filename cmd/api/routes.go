@@ -14,6 +14,10 @@ func (app *application) routes() http.Handler {
 	mux.Use(middleware.Recoverer)
 
 	mux.Get("/", app.Home)
+	mux.Get("/foods", app.Foods)
+
+	mux.Get("/recipes", app.Recipes)
+	mux.Get("/ingredients", app.Ingredients)
 
 	return mux
 }
